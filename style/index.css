@@ -1,5 +1,9 @@
 /* NAVBAR STYLES */
 ul#navbar {
+  position: sticky;
+  top: 0;
+  left: 0; /* not needed normally, but this is to allow sticky to do its job */
+  
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -24,6 +28,18 @@ ul#navbar li a:hover:not(.active) {
 }
 
 .active {
+  background-image: url('/AdriansPhysicsNumbers/images/active-link.jpg');
+  background-repeat: repeat;
+}
+
+/* BODY STYLES */
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
   background-image: url('/AdriansPhysicsNumbers/images/active-link.jpg');
   background-repeat: repeat;
 }
