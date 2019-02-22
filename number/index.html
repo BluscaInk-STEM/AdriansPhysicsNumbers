@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Home | Adrian's Physics Numbers</title>
+    <link rel="stylesheet" type="text/css" href="/AdriansPhysicsNumbers/style/index.css">
+    <link rel="icon" href="/AdriansPhysicsNumbers/images/logo_square.png">
+  </head>
+  <body>
+    <ul id="navbar">
+      <li><a href="/AdriansPhysicsNumbers/" class="active">Home</a></li>
+      <li><a href="/AdriansPhysicsNumbers/about">About APN</a></li>
+      <li><a href="/AdriansPhysicsNumbers/numbers">Numbers</a></li>
+      <li><a href="https://www.khanacademy.org/science/physics" target="_blank" class="specialnavlink">Where I Learned Physics</a></li>
+      <li style="float: right;"><a href="/">CodeDojo Home</a></li>
+      <script src="url-params-1.0.0.js"></script>
+    </ul>
+    <div class="section" id="top">
+      <div style="text-align: center;"><img src="/AdriansPhysicsNumbers/images/logo_rect.png"  style="max-width: 600px; width: 100%; height: 100%; object-fit: contain;" alt="Adrian's Physics Numbers"/></div>
+    </div>
+    <div class="section" id="number-section">
+      <h1 id="title">Error 404: Not Found</h1>
+      <p id="description">These dang 404s! It looks like you entered a page for a number that either no longer exists, or has been moved to a different name. <a href="/AdriansPhysicsNumbers/">Home</a></p>
+      <table>
+        <tr>
+          <td><b>Formula</b></td>
+          <td id="formula">N/A</td>
+        </tr>
+        <tr>
+          <td><b>Type</b></td>
+          <td id="type">N/A</td>
+        </tr>
+        <tr>
+          <td><b>Unit</b></td>
+          <td id="unit">N/A</td>
+        </tr>
+        <tr>
+          <td><b>See Also</b></td>
+          <td id="see-also"></td>
+        </tr>
+      </table>
+    </div>
+    <script>
+      URLParams.setMode(URLParams.MODE_HREF);
+      URLParams.readURLData();
+			
+			let page;
+      try {
+				page = parseInt(URLParams.getParam("idx"));
+			} catch(e) {
+				console.error("I had a problem with you using a non-interger number for an idx key.");
+			}
+			
+      // Request JSON data file containing all numbers
+      let xmlhttp = new XMLHttpRequest();
+			xmlhttp.onreadystatechange = function() {
+  			if (this.readyState == 4 && this.status == 200) {
+    			let response = JSON.parse(this.responseText);
+					let title = document.querySelector("#title");
+          let description = document.querySelector("#description");
+
+					try {
+						title.innerHTML = response[page].title;
+            description.innerHTML = response[page].description;
+					} catch(e) {
+						console.error("There was an error trying to access the number at idx: " + page);
+					}
+  			}
+			};
+
+			xmlhttp.open("GET", "/AdriansPhysicsNumbers/data/numbers.json", true);
+			xmlhttp.send();
+    </script>
+  </body>
+</html>
