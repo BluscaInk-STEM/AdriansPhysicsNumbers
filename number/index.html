@@ -22,21 +22,25 @@
       <h1 id="title">Error 404: Not Found</h1>
       <p id="description">These dang 404s! It looks like you entered a page for a number that either no longer exists, or has been moved to a different name. <a href="/AdriansPhysicsNumbers/">Home</a></p>
       <table>
+				<tr>
+					<td><b>Number</b></td>
+					<td id="number">404</td>
+				</tr>
         <tr>
           <td><b>Formula</b></td>
-          <td id="formula">N/A</td>
+          <td id="formula">\(404g\)</td>
         </tr>
         <tr>
           <td><b>Type</b></td>
-          <td id="type">N/A</td>
+          <td id="type">Web Error</td>
         </tr>
         <tr>
           <td><b>Unit</b></td>
-          <td id="unit">N/A</td>
+          <td id="unit">HTTP</td>
         </tr>
         <tr>
           <td><b>See Also</b></td>
-          <td id="see-also"></td>
+          <td id="see-also">200</td>
         </tr>
       </table>
     </div>
@@ -58,10 +62,31 @@
     			let response = JSON.parse(this.responseText);
 					let title = document.querySelector("#title");
           let description = document.querySelector("#description");
+					let number = document.querySelector("#number");
+					let formula = document.querySelector("#formula"):
+					let type = document.querySelector("#type");
+					let unit = document.querySelector("#unit");
+					let see_also = document.querySelector("#see-also");
 
 					try {
 						title.innerHTML = response[page].title;
             description.innerHTML = response[page].description;
+						number.innerHTML = response[page].number;
+						formula.innerHTML = response[page].formula;
+						type.innerHTML = response[page].type;
+						unit.innerHTML = response[page].unit;
+						
+						let see_also_string = "";
+						for(let i = 0; i < response[page].see_also.length; ++i) {
+							see_also_string += response[page].see_also[i];
+							
+							if(response[page].see_also.length - 1 !== i) {
+								// Not at end
+								see_also_string += "<br/>";
+							}
+						}
+						
+						see_also.innerHTML = see_also_string;
 					} catch(e) {
 						console.error("There was an error trying to access the number at idx: " + page);
 					}
