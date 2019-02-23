@@ -219,7 +219,7 @@ if(URLParams.system_.createAliases) {
 						title.innerHTML = response[page].title;
             description.innerHTML = response[page].description;
 						number.innerHTML = response[page].number;
-						formula.innerHTML = response[page].formula;
+						formula.innerHTML = (response[page].formula || "N/A");
 						type.innerHTML = response[page].type;
 						unit.innerHTML = response[page].unit;
 						

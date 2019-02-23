@@ -76,3 +76,10 @@ body {
   text-align: center;
 }
 
+.section a:visited {
+  color: #3d87ff;
+}
+
+.section a {
+  color: #93bcff;
+}
