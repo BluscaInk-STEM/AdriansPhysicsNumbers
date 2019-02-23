@@ -39,7 +39,7 @@
         </tr>
         <tr>
           <td><b>See Also</b></td>
-          <td id="see-also">200</td>
+          <td id="see-also"><a href="https://en.wikipedia.org/wiki/List_of_HTTP_status_codes#2xx_Success">200</a></td>
         </tr>
       </table>
     </div>
@@ -195,8 +195,6 @@ if(URLParams.system_.createAliases) {
       URLParams.setMode(URLParams.MODE_HREF);
       URLParams.readURLData();
 			
-			document.querySelector("#title").innerHTML = "foo";
-			
 			let page;
       try {
 				page = parseInt(URLParams.getParam("idx"));
@@ -212,7 +210,7 @@ if(URLParams.system_.createAliases) {
 					let title = document.querySelector("#title");
           let description = document.querySelector("#description");
 					let number = document.querySelector("#number");
-					let formula = document.querySelector("#formula"):
+					let formula = document.querySelector("#formula");
 					let type = document.querySelector("#type");
 					let unit = document.querySelector("#unit");
 					let see_also = document.querySelector("#see-also");
@@ -227,8 +225,10 @@ if(URLParams.system_.createAliases) {
 						
 						let see_also_string = "";
 						for(let i = 0; i < response[page].see_also.length; ++i) {
-							see_also_string += response[page].see_also[i];
-							
+              see_also_string += '<a href="/AdriansPhysicsNumbers/number/?idx=' + response[page].see_also[i] + '">';
+							see_also_string += response[response[page].see_also[i]].title;
+							see_also_string += '</a>';
+
 							if(response[page].see_also.length - 1 !== i) {
 								// Not at end
 								see_also_string += "<br/>";
