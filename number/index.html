@@ -48,6 +48,8 @@
       URLParams.setMode(URLParams.MODE_HREF);
       URLParams.readURLData();
 			
+			document.querySelector("#title").innerHTML = "foo";
+			
 			let page;
       try {
 				page = parseInt(URLParams.getParam("idx"));
