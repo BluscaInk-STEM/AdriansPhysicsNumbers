@@ -1,11 +1,11 @@
 [
   {
-    "number": 9.8,
+    "number": 9.81,
     "title": "Acceleration due to Gravity (Earth)",
     "description": "<p>Acceleration due to Gravity (Earth)</p><p>You may have heard of 9.8(1) as being the average gravitational acceleration or force pulling us down to the ground here on earth in meters per second (m/s). The standard value for this in terms of G Forces is 1.</p>",
     "formula": null,
     "type": "Constant",
-    "unit": "m/s",
+    "unit": "m/s²",
     "see_also": [1]
   },
   {
@@ -34,5 +34,23 @@
     "type": "Divider",
     "unit": "km",
     "see_also": [2]
+  },
+  {
+    "number": 343,
+    "title": "Speed of Sound",
+    "description": "<p>Speed of Sound</p><p>This number is the point at which you become supersonic in terms of speed. The unit for the speed of sound is mach. Except you say the unit (mach) before the number. For example, five times the speed of sound is Mach 5.</p>",
+    "formula": "\\(343s\\) where \\(s\\) is the number of times the speed of sound.",
+    "type": "Limit",
+    "unit": "m/s",
+    "see_also": [5]
+  },
+  {
+    "number": 1715,
+    "title": "Hypersonic Speed (Speed of Sound &times; 5)",
+    "description": "<p>Hypersonic Speed</p><p>The number is the point at which you become hypersonic in terms of speed. Hypersonic speeds are speeds above Mach 5. For example, SpaceX's launches generally reach around Mach 70 or Mach 80. That is well over the threshhold for being hypersonic. For reference U.S. fighter jets fly at about Mach 2.35.</p>",
+    "formula": null,
+    "type": "Limit",
+    "unit": "m/s",
+    "see_also": [4]
   }
 ]
