@@ -1,12 +1,12 @@
 [
   {
-    "number": 9.81,
+    "number": 9.807,
     "title": "Acceleration due to Gravity (Earth)",
     "description": "<p>Acceleration due to Gravity (Earth)</p><p>You may have heard of 9.8(1) as being the average gravitational acceleration or force pulling us down to the ground here on earth in meters per second (m/s). The standard value for this in terms of G Forces is 1.</p>",
     "formula": null,
     "type": "Constant",
     "unit": "m/s²",
-    "see_also": [1]
+    "see_also": [1, 6]
   },
   {
     "number": 1,
@@ -15,21 +15,21 @@
     "formula": null,
     "type": "Constant",
     "unit": "g",
-    "see_also": [0]
+    "see_also": [0, 7]
   },
   {
-    "number": 650.102040816,
+    "number": 649.638910982,
     "title": "Average Celestial Body Radius for Given Gravitational Acceleration Multiplier",
-    "description": "<p>Average Celestial Body Radius for Given Gravitational Acceleration</p><p>This number is a multiplier that, when multiplied with, gives you the average radius of any celestial object (sphere for simplicity) in kilometers (km). The thing that you should multiply by is the gravitational acceleration in meters per second (m/s). As an alternative, you can divide this acceleration value by 0.00153822005.</p>",
+    "description": "<p>Average Celestial Body Radius for Given Gravitational Acceleration</p><p>This number is a multiplier that, when multiplied with, gives you the average radius of any celestial object (sphere for simplicity) in kilometers (km). The thing that you should multiply by is the gravitational acceleration in meters per second squared (m/s²). As an alternative, you can divide this acceleration value by 0.00153822005.</p>",
     "formula": "\\(650.102040816g\\)",
     "type": "Multiplier",
     "unit": "km",
     "see_also": [3]
   },
   {
-    "number": 0.00153822005,
+    "number": 0.0015393167,
     "title": "Average Celestial Body Radius for Given Gravitational Acceleration Divider",
-    "description": "<p>Average Celestial Body Radius for Given Gravitational Acceleration Divider</p><p>This number is a divider that, when divided by, gives you the average radius of any celestial object (sphere for simplicity) in kilometers (km). The thing that you should divide by is the gravitational acceleration in meters per second (m/s). As an alternative, you can multiply this acceleration value by 650.102040816.</p>",
+    "description": "<p>Average Celestial Body Radius for Given Gravitational Acceleration Divider</p><p>This number is a divider that, when divided by, gives you the average radius of any celestial object (sphere for simplicity) in kilometers (km). The thing that you should divide by is the gravitational acceleration in meters per second squared (m/s²). As an alternative, you can multiply this acceleration value by 650.102040816.</p>",
     "formula": "\\(g\\over0.00153822005\\)",
     "type": "Divider",
     "unit": "km",
@@ -52,5 +52,23 @@
     "type": "Limit",
     "unit": "m/s",
     "see_also": [4]
+  },
+  {
+    "number": 3.7,
+    "title": "Acceleration due to Gravity (Venus)",
+    "description": "<p>Acceleration due to Gravity (Venus)</p><p>While it may not be as popular as Earth's acceleration due to gravity, Venus also has gravity. What a surprise, right? (I <u><i>really<i></u> hope you knew that was sarcastic.) Specifically, it is approximately 38% of Earth's gravity.</p>",
+    "formula": null,
+    "type": "Constant",
+    "unit": "m/s²",
+    "see_also": [7, 0]
+  },
+  {
+    "number": 0.3772815336,
+    "title": "G Force (Venus)",
+    "description": "<p>G Force (Venus)</p><p>This is the value that, in Gs, was calculated to be the force of gravity at the surface of the planet Venus, with the definition of 1g at Earth's surface gravity. Venus has approximately 38% of Earth's gravity. And so for example, if you weight 100 </p>",
+    "formula": "\\(W0.3772815336\\) where \\(W\\) is the weight in any unit on earth",
+    "type": "Constant",
+    "unit": "g",
+    "see_also": [6, 1]
   }
 ]
