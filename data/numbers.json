@@ -42,7 +42,7 @@
     "formula": "\\(343s\\) where \\(s\\) is the number of times the speed of sound.",
     "type": "Limit",
     "unit": "m/s",
-    "see_also": [5]
+    "see_also": [5, 8]
   },
   {
     "number": 1715,
@@ -51,7 +51,7 @@
     "formula": null,
     "type": "Limit",
     "unit": "m/s",
-    "see_also": [4]
+    "see_also": [4, 8]
   },
   {
     "number": 3.7,
@@ -65,10 +65,19 @@
   {
     "number": 0.3772815336,
     "title": "G Force (Venus)",
-    "description": "<p>G Force (Venus)</p><p>This is the value that, in Gs, was calculated to be the force of gravity at the surface of the planet Venus, with the definition of 1g at Earth's surface gravity. Venus has approximately 38% of Earth's gravity. And so for example, if you weight 100 </p>",
+    "description": "<p>G Force (Venus)</p><p>This is the value that, in Gs, was calculated to be the force of gravity at the surface of the planet Venus, with the definition of 1g at Earth's surface gravity. Venus has approximately 38% of Earth's gravity. And so for example, if you weight 100 newtons on earth, you weigh about 38 newtons on Venus.</p>",
     "formula": "\\(W0.3772815336\\) where \\(W\\) is the weight in any unit on earth",
     "type": "Constant",
     "unit": "g",
     "see_also": [6, 1]
+  },
+  {
+    "number": 299792458,
+    "title": "Speed of Light (Ultimate Speed Limit)",
+    "description": "<p>Speed of Light (Ultimate Speed Limit)</p><p>Even if you are extremely young, you have probably heard of this speed. It is known as the speed of light. I like to refer to it as the ultimate speed limit, because no matter how much you try to break it, the laws of our universe disallow our pitiful attempts.</p><p>Furthermore, the speed of light is not an exact number. While it is approximately 300 million meters per second, this doesn't stop it from being 600 million meters per second, or even higher/lower.</p>"
+    "formula": null,
+    "type": "Constant",
+    "unit": "m/s",
+    "see_also": [4, 5]
   }
 ]
