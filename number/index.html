@@ -222,7 +222,7 @@ if(URLParams.system_.createAliases) {
             description.innerHTML = response[page].description;
 						let tempNumber = Math.floor(response[page].number).toLocaleString() + (Math.floor(response[page].number) === response[page].number ? "" : "." + (response[page].number-Math.floor(response[page].number)).toFixed(10).split(".")[1]);
 						for(let i = number.innerHTML.length - 1; i >= 0; --i) {
-							if(number.innerHTML[i] === "0") {
+							if(number.innerHTML[i] == "0") {
 								tempNumber = tempNumber.substring(0, -2);
 							} else {
 								break;
