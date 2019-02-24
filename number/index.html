@@ -220,7 +220,7 @@ if(URLParams.system_.createAliases) {
 					try {
 						title.innerHTML = response[page].title;
             description.innerHTML = response[page].description;
-						number.innerHTML = Math.floor(response[page].number).toLocaleString() + (Math.floor(response[page].number) === response[page].number ? "" : "." + (response[page].number-Math.floor(response[page].number)).toString().substr(2, -1));
+						number.innerHTML = Math.floor(response[page].number).toLocaleString() + (Math.floor(response[page].number) === response[page].number ? "" : "." + (response[page].number-Math.floor(response[page].number)).toString().substr(2));
 						formula.innerHTML = (response[page].formula || "N/A");
 						type.innerHTML = response[page].type;
 						unit.innerHTML = response[page].unit;
