@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Home | Adrian's Physics Numbers</title>
+    <title>Search | Adrian's Physics Numbers</title>
     <link rel="stylesheet" type="text/css" href="/AdriansPhysicsNumbers/style/index.css">
     <link rel="stylesheet" type="text/css" href="/AdriansPhysicsNumbers/style/search.css">
     <link rel="icon" href="/AdriansPhysicsNumbers/images/logo_square.png">
@@ -9,9 +9,10 @@
   </head>
   <body>
     <ul id="navbar">
-      <li><a href="/AdriansPhysicsNumbers/" class="active">Home</a></li>
+      <li><a href="/AdriansPhysicsNumbers/">Home</a></li>
       <li><a href="/AdriansPhysicsNumbers/about">About APN</a></li>
-      <li><a href="/AdriansPhysicsNumbers/search">Numbers</a></li>
+      <li><a href="/AdriansPhysicsNumbers/list">List</a></li>
+      <li><a href="/AdriansPhysicsNumbers/search" class="active">Search</a></li>
       <li><a href="https://www.khanacademy.org/science/physics" target="_blank" class="specialnavlink">Where I Learned Physics</a></li>
       <li style="float: right;"><a href="/">CodeDojo Home</a></li>
     </ul>
@@ -42,6 +43,7 @@ bar.value = q;
 
 if(q.length !== 0) {
   // Perform search results
+  document.title = "Search for " + q + " | Adrian's Physics Numbers";
   let xmlhttp = new XMLHttpRequest();
 	xmlhttp.onreadystatechange = function() {
   	if (this.readyState == 4 && this.status == 200) {

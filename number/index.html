@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Home | Adrian's Physics Numbers</title>
+    <title>404 Error | Adrian's Physics Numbers</title>
     <link rel="stylesheet" type="text/css" href="/AdriansPhysicsNumbers/style/index.css">
     <link rel="icon" href="/AdriansPhysicsNumbers/images/logo_square.png">
   </head>
   <body>
     <ul id="navbar">
-      <li><a href="/AdriansPhysicsNumbers/" class="active">Home</a></li>
+      <li><a href="/AdriansPhysicsNumbers/">Home</a></li>
       <li><a href="/AdriansPhysicsNumbers/about">About APN</a></li>
-      <li><a href="/AdriansPhysicsNumbers/search">Numbers</a></li>
+      <li><a href="/AdriansPhysicsNumbers/list">List</a></li>
+      <li><a href="/AdriansPhysicsNumbers/search">Search</a></li>
       <li><a href="https://www.khanacademy.org/science/physics" target="_blank" class="specialnavlink">Where I Learned Physics</a></li>
       <li style="float: right;"><a href="/">CodeDojo Home</a></li>
       <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
@@ -214,6 +215,7 @@ if(URLParams.system_.createAliases) {
 					let type = document.querySelector("#type");
 					let unit = document.querySelector("#unit");
 					let see_also = document.querySelector("#see-also");
+          document.title = response[page].title + " | Adrian's Physics Numbers";
 
 					try {
 						title.innerHTML = response[page].title;
