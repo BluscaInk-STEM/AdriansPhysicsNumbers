@@ -117,7 +117,7 @@
     "formula": null,
     "type": "Constant",
     "unit": "m/s²",
-    "see_also": [12, 6, 10, 0]
+    "see_also": [12, 6, 9, 0]
   },
   {
     "index": 12,
@@ -127,6 +127,6 @@
     "formula": "\\(W0.3784031814\\) where \\(W\\) is the weight in any unit on earth",
     "type": "Constant",
     "unit": "g",
-    "see_also": [11, 7, 9, 1]
+    "see_also": [11, 7, 10, 1]
   }
 ]
