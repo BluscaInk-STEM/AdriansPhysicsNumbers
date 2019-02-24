@@ -30,7 +30,7 @@
     "number": 0.0015393167,
     "title": "Average Celestial Body Radius for Given Gravitational Acceleration Divider",
     "description": "<p>Average Celestial Body Radius for Given Gravitational Acceleration Divider</p><p>This number is a divider that, when divided by, gives you the average radius of any celestial object (sphere for simplicity) in kilometers (km). The thing that you should divide by is the gravitational acceleration in meters per second squared (m/s²). As an alternative, you can multiply this acceleration value by 650.102040816.</p>",
-    "formula": "\\(g\\over0.00153822005\\)",
+    "formula": "\\(g\\over0.0015393167\\)",
     "type": "Divider",
     "unit": "km",
     "see_also": [2]
