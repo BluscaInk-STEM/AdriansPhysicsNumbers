@@ -1,0 +1,21 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css");
+
+#search { text-align: center; }
+
+#search input[type=text] {
+  padding: 6px;
+  font-size: 17px;
+  border: none;
+}
+
+#search button {
+  padding: 6px 10px;
+  background: #ddd;
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+}
+
+#search button:hover {
+  background: #ccc;
+}

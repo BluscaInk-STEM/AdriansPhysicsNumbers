@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Home | Adrian's Physics Numbers</title>
+    <link rel="stylesheet" type="text/css" href="/AdriansPhysicsNumbers/style/index.css">
+    <link rel="stylesheet" type="text/css" href="/AdriansPhysicsNumbers/style/search.css">
+    <link rel="icon" href="/AdriansPhysicsNumbers/images/logo_square.png">
+    <script src="/AdriansPhysicsNumbers/libs/url-params-1.0.0.js"></script>
+  </head>
+  <body>
+    <ul id="navbar">
+      <li><a href="/AdriansPhysicsNumbers/" class="active">Home</a></li>
+      <li><a href="/AdriansPhysicsNumbers/about">About APN</a></li>
+      <li><a href="/AdriansPhysicsNumbers/search">Numbers</a></li>
+      <li><a href="https://www.khanacademy.org/science/physics" target="_blank" class="specialnavlink">Where I Learned Physics</a></li>
+      <li style="float: right;"><a href="/">CodeDojo Home</a></li>
+    </ul>
+    <div class="section" id="top">
+      <div style="text-align: center;"><img src="/AdriansPhysicsNumbers/images/logo_rect.png"  style="max-width: 600px; width: 100%; height: 100%; object-fit: contain;" alt="Adrian's Physics Numbers"/></div>
+    </div>
+    <div class="section" id="search">
+      <input type="text" placeholder="Search for any name..." id="searchbar">
+      <button id="searchgo"><i class="fa fa-search"></i></button>
+    </div>
+    <div class="section" id="results">
+      
+    </div>
+    <script>
+
+let bar = document.querySelector("#searchbar");
+let submit = document.querySelector("#searchgo");
+let results = document.querySelector("#results");
+let loaded = new Date();
+
+// Initialize URLParams
+URLParams.setMode(URLParams.MODE_HREF);
+URLParams.readURLData();
+
+let q = URLParams.getParam("q");
+
+bar.value = q;
+
+if(q.length !== 0) {
+  // Perform search results
+  let xmlhttp = new XMLHttpRequest();
+	xmlhttp.onreadystatechange = function() {
+  	if (this.readyState == 4 && this.status == 200) {
+  		let response = JSON.parse(this.responseText);
+      let count = 0;
+      let output = "";
+      
+      for(let i = 0; i < response.length; ++i) {
+        if(response[i].title.toLowerCase().match(q.toLowerCase()) !== null) {
+          output += "<a href=\"/AdriansPhysicsNumbers/number/?idx=" + i + "\" style=\"color: black;\"><b>" + response[i].title + "</b></a><br/>";
+          output += "<span style=\"color: gray;\">" + response[i].number + response[i].unit + "</span><hr/>";
+
+          ++count;
+        }
+      }
+
+      results.innerHTML = "<p style=\"color: gray;\">" + count + " search results in " + (new Date() - loaded) + " milliseconds</p><hr/>";
+      results.innerHTML += output;
+      results.innerHTML += "<p style=\"color: gray;\">Search results generated with the help of standard JavaScript and the <a href=\"https://url-params.stackblitz.io\">URLParams library</a>.</p>";
+  	}
+	};
+
+  xmlhttp.open("GET", "/AdriansPhysicsNumbers/data/numbers.json", true);
+  xmlhttp.send();
+} else {
+  // Hide search data
+  results.style.display = "none";
+}
+
+bar.onkeyup = function(e) {
+  if(e.code === "Enter") {
+    submit.onclick();
+  }
+}
+
+submit.onclick = function() {
+  window.location.href = "/AdriansPhysicsNumbers/search/?q=" + bar.value;
+}
+
+    </script>
+  </body>
+</html>
