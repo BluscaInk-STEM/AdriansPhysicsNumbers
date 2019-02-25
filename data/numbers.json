@@ -128,5 +128,25 @@
     "type": "Constant",
     "unit": "g",
     "see_also": [11, 7, 10, 1]
+  },
+  {
+    "index": 13,
+    "number": 274,
+    "title": "Acceleration due to Gravity (Sun)",
+    "description": "<p>Acceleration due to Gravity (Sun)</p><p>This is the ultimate gravitational force within our solar system. It is that of our sun's. For reference, Jupiter, the largest planet in our solar system, has just over 11 times less than that of the sun. Although there are much stronger natural gravitational forces around, this is the strongest one in the solar system.</p><blockquote style=\"border-left: 5px solid gray; background: lightgray; padding: 16px;\">NOTE: This measure is calculated starting at the surface of the sun.</blockquote>",
+    "formula": null,
+    "type": "Constant",
+    "unit": "m/s²",
+    "see_also": [14, 0]
+  },
+  {
+    "index": 14,
+    "number": 27.9392270827,
+    "title": "G Force (Sun)",
+    "description": "<p>G Force (Sun)</p><p>This value is the number of times the gravity of earth can fit into the sun. In other words, the sun has approximately 28 times the gravity of earth. For reference, Jupiter, the largest planet in our solar system, has just over 11 times less than that of the sun. This is the stringest gravitational pull you will get within the entirety of our solar system.</p><blockquote style=\"border-left: 5px solid gray; background: lightgray; padding: 16px;\">NOTE: This measure is calculated starting at the surface of the sun.</blockquote>",
+    "formula": "\\(W27.9392270827\\) where \\(W\\) is the weight in any unit on earth",
+    "type": "Constant",
+    "unit": "g",
+    "see_also": [13, 1]
   }
 ]
