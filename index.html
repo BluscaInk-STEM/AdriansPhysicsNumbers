@@ -22,5 +22,105 @@
       <p>Welcome! My name is Adrian and this is my physics site... I guess! This site holds the many, many numbers I calculate and come up with, such as multipliers, dividers, constants, and so on, that involve physics.</p>
       <p>The original idea for this site was when I was calculating these numbers for things such as the average radius of a planet when given the gravitational accelerative force in meters per second (m/s). I was just purely curious about certain things, and couldn't find actual answers. Maybe these things don't have answers, maybe they can't. But that didn't stop me from coming up with these numbers!</p>
     </div>
+    <div class="section" id="daily">
+      <h1>Daily Number: <span id="dailytitle">Could not Load</span></h1>
+      <p style="color: gray;" id="dailydescription">Could not load the daily number. Refresh to try again.</p>
+      <table id="dailydata" style="display: none;">
+				<tr>
+					<td><b>Number</b></td>
+					<td id="dailynumber">Error</td>
+				</tr>
+        <tr>
+          <td><b>Formula</b></td>
+          <td id="dailyformula">Error</td>
+        </tr>
+        <tr>
+          <td><b>Type</b></td>
+          <td id="dailytype">Error</td>
+        </tr>
+        <tr>
+          <td><b>Unit</b></td>
+          <td id="dailyunit">Error</td>
+        </tr>
+        <tr>
+          <td><b>See&nbsp;Also</b></td>
+          <td id="dailysee-also">Error</td>
+        </tr>
+      </table>
+    </div>
+    <script>
+
+let loaded = new Date();
+
+let xmlhttp = new XMLHttpRequest();
+xmlhttp.onreadystatechange = function() {
+  if (this.readyState == 4 && this.status == 200) {
+    let response = JSON.parse(this.responseText);
+    
+    let lastlogin = new Date(localStorage.getItem("lastlogin") || 0);
+
+    if(lastlogin-0 === 0) {
+      localStorage.setItem("lastlogin", new Date());
+      generateDaily(response);
+    } else if(loaded.getDate() !== lastlogin.getDate() ||
+              loaded.getMonth() !== lastlogin.getMonth() ||
+              loaded.getFullYear() !== lastlogin.getFullYear()) {
+      localStorage.setItem("lastlogin", new Date());
+      generateDaily(response);
+    } else {
+      localStorage.setItem("lastlogin", new Date());
+      openDaily(response);
+    }
+  }
+};
+
+function generateDaily(json) {
+  let i = Math.floor(Math.random() * json.length);
+
+  localStorage.setItem("daily", JSON.stringify(json[i]));
+
+  openDaily(json);
+}
+
+function openDaily(allData) {
+  document.querySelector("#dailydata").style.display = "block";
+
+  let title = document.querySelector("#dailytitle");
+  let description = document.querySelector("#dailydescription");
+  let number = document.querySelector("#dailynumber");
+  let formula = document.querySelector("#dailyformula");
+  let type = document.querySelector("#dailytype");
+  let unit = document.querySelector("#dailyunit");
+  let see_also = document.querySelector("#dailysee-also");
+
+  let json = JSON.parse(localStorage.getItem("daily"));
+
+  title.innerHTML = json.title;
+  description.style.color = "#000000";
+  description.innerHTML = json.description;
+  number.innerHTML = Math.floor(json.number).toLocaleString() + (Math.floor(json.number) === json.number ? "" : "." + Number((json.number-Math.floor(json.number)).toPrecision(10)).toString().split(".")[1]);
+  formula.innerHTML = (json.formula || "N/A");
+  type.innerHTML = json.type;
+  unit.innerHTML = json.unit;
+
+  let see_also_string = "";
+	for(let i = 0; i < json.see_also.length; ++i) {
+    see_also_string += '<a href="/AdriansPhysicsNumbers/number/?idx=' + json.see_also[i] + '">';
+		see_also_string += allData[json.see_also[i]].title;
+		see_also_string += '</a>';
+
+		if(json.see_also.length - 1 !== i) {
+			// Not at end
+			see_also_string += "<br/>";
+		}
+	}
+	
+	see_also.innerHTML = see_also_string;
+}
+
+xmlhttp.open("GET", "/AdriansPhysicsNumbers/data/numbers.json", true);
+xmlhttp.send();
+
+    </script>
   </body>
 </html>
