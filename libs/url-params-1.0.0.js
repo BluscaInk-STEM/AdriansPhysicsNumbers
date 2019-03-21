@@ -30,6 +30,11 @@ URLParams.setMode = function(mode) {
   }
 }
 
+String.prototype.replaceAll(search, replacement) {
+  let target = this;
+  return target.replace(new RegExp(search, 'g'), replacement);
+}
+
 URLParams.readURLData = function() {
   if(window.location.href.indexOf("?") != -1) {
     try {
@@ -44,46 +49,46 @@ URLParams.readURLData = function() {
 
       // Web url escape code replacements
       // Invalid ASCII control characters
-      urldata = urldata.replace("%20", " ");
-      urldata = urldata.replace("%21", "!");
-      urldata = urldata.replace("%22", "\"");
-      urldata = urldata.replace("%23", "#");
-      urldata = urldata.replace("%24", "$");
+      urldata = urldata.replaceAll("%20", " ");
+      urldata = urldata.replaceAll("%21", "!");
+      urldata = urldata.replaceAll("%22", "\"");
+      urldata = urldata.replaceAll("%23", "#");
+      urldata = urldata.replaceAll("%24", "$");
       // % is the escape character for urls. hence this special case, fixed afterwards below
-      //urldata = urldata.replace("%26", "&");
-      urldata = urldata.replace("%27", "\'");
-      urldata = urldata.replace("%28", "(");
-      urldata = urldata.replace("%29", ")");
-      urldata = urldata.replace("%2A", "*");
-      urldata = urldata.replace("%2B", "+");
-      urldata = urldata.replace("%2C", ",");
-      urldata = urldata.replace("%2D", "-");
-      urldata = urldata.replace("%2E", ".");
-      urldata = urldata.replace("%2F", "/");
+      //urldata = urldata.replaceAll("%26", "&");
+      urldata = urldata.replaceAll("%27", "\'");
+      urldata = urldata.replaceAll("%28", "(");
+      urldata = urldata.replaceAll("%29", ")");
+      urldata = urldata.replaceAll("%2A", "*");
+      urldata = urldata.replaceAll("%2B", "+");
+      urldata = urldata.replaceAll("%2C", ",");
+      urldata = urldata.replaceAll("%2D", "-");
+      urldata = urldata.replaceAll("%2E", ".");
+      urldata = urldata.replaceAll("%2F", "/");
       // Alphanumeric codeblock #1
-      urldata = urldata.replace("%3A", ":");
-      urldata = urldata.replace("%3B", ";");
-      urldata = urldata.replace("%3C", "<");
-      //urldata = urldata.replace("%3D", "=");
-      urldata = urldata.replace("%3E", ">");
-      //urldata = urldata.replace("%3F", "?");
-      urldata = urldata.replace("%40", "@");
+      urldata = urldata.replaceAll("%3A", ":");
+      urldata = urldata.replaceAll("%3B", ";");
+      urldata = urldata.replaceAll("%3C", "<");
+      //urldata = urldata.replaceAll("%3D", "=");
+      urldata = urldata.replaceAll("%3E", ">");
+      //urldata = urldata.replaceAll("%3F", "?");
+      urldata = urldata.replaceAll("%40", "@");
       // Alphanumeric codeblock #2
-      urldata = urldata.replace("%5B", "[");
-      urldata = urldata.replace("%5C", "\\");
-      urldata = urldata.replace("%5D", "]");
-      urldata = urldata.replace("%5E", "^");
-      urldata = urldata.replace("%5F", "_");
-      urldata = urldata.replace("%60", "`");
+      urldata = urldata.replaceAll("%5B", "[");
+      urldata = urldata.replaceAll("%5C", "\\");
+      urldata = urldata.replaceAll("%5D", "]");
+      urldata = urldata.replaceAll("%5E", "^");
+      urldata = urldata.replaceAll("%5F", "_");
+      urldata = urldata.replaceAll("%60", "`");
       // Alphanumeric codeblock #3
-      urldata = urldata.replace("%7B", "{");
-      urldata = urldata.replace("%7C", "|");
-      urldata = urldata.replace("%7D", "}");
-      urldata = urldata.replace("%7E", "~");
+      urldata = urldata.replaceAll("%7B", "{");
+      urldata = urldata.replaceAll("%7C", "|");
+      urldata = urldata.replaceAll("%7D", "}");
+      urldata = urldata.replaceAll("%7E", "~");
       // Invalid character anyways
 
       // URL escape character
-      urldata = urldata.replace("%25", "%");
+      urldata = urldata.replaceAll("%25", "%");
 
       urldata = urldata.substring(1); // NOTE: Cut off '?'
 
